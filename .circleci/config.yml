@@ -22,7 +22,7 @@ jobs:
           name: Install dependencies
           command: |
             apt-get install -y gettext
-            gcloud components install kubectl
+            gcloud components install -y kubectl
       - run:
           name: Install Docker client
           command: |
