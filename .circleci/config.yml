@@ -10,7 +10,7 @@ jobs:
       GOOGLE_APPLICATION_CREDENTIALS: ${HOME}/account-auth.json
       IMAGE_NAME: flask
     docker:
-      - image: google/cloud-sdk:240.0.0-slim
+      - image: google/cloud-sdk:241.0.0-slim
     steps:
       - checkout
       - setup_remote_docker
@@ -23,7 +23,8 @@ jobs:
           name: Install dependencies
           command: |
             apt-get install -y gettext
-            gcloud components install --quiet kubectl
+            apt-get install -y kubectl
+            # gcloud components install --quiet kubectl
       - run:
           name: Install Docker client
           command: |
