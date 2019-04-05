@@ -4,6 +4,7 @@ jobs:
     working_directory: /app
     environment:
       PROJECT_NAME: soe-gcp-development
+      CLUSTER_NAME: k8s
       CLOUDSDK_COMPUTE_ZONE: asia-northeast1-a
       DEBIAN_FRONTEND: noninteractive
       GOOGLE_APPLICATION_CREDENTIALS: ${HOME}/account-auth.json
@@ -63,8 +64,8 @@ jobs:
               gcloud auth activate-service-account --key-file ${HOME}/account-auth.json
               gcloud config set project $PROJECT_NAME
               gcloud --quiet config set container/cluster $CLUSTER_NAME
-            #  gcloud config set compute/zone ${CLOUDSDK_COMPUTE_ZONE}
-            #  gcloud --quiet container clusters get-credentials $CLUSTER_NAME
-            #  gcloud config set container/use_client_certificate True
-            #  gcloud docker -- push asia.gcr.io/${PROJECT_NAME}/${IMAGE_NAME}:${CIRCLE_SHA1}
+              gcloud config set compute/zone ${CLOUDSDK_COMPUTE_ZONE}
+              gcloud --quiet container clusters get-credentials $CLUSTER_NAME
+              gcloud config set container/use_client_certificate True
+              gcloud docker -- push asia.gcr.io/${PROJECT_NAME}/${IMAGE_NAME}:${CIRCLE_SHA1}
             fi
