@@ -21,6 +21,7 @@ jobs:
       - run:
           name: Install dependencies
           command: |
+            apt-get upate
             apt-get install -y gettext
             apt-get install -y kubectl
       - run:
