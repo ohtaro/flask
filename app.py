@@ -1,11 +1,6 @@
 from flask import Flask
 from ddtrace import tracer
 
-tracer.configure(
-    hostname='10.8.1.26',
-    port=8126,
-)
-
 app = Flask(__name__)
 
 @app.route('/')
