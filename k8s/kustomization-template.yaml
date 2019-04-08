@@ -17,4 +17,4 @@ resources:
 # デプロイするIMAGE TAG
 images:
 - name: asia.gcr.io/soe-gcp-development/flask
-  newTag: ${IMAGE_TAG}
+  newTag: ${CIRCLE_SHA1}
