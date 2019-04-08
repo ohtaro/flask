@@ -16,5 +16,6 @@ resources:
  
 # デプロイするIMAGE TAG
 images:
-- name: asia.gcr.io/${PROJECT_NAME}/flask
+- name: flask
+  newName: asia.gcr.io/${PROJECT_NAME}/flask
   newTag: ${CIRCLE_SHA1}
