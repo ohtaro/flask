@@ -16,6 +16,6 @@ spec:
     spec:
       containers:
       - name: flask
-        image: flask:latest
+        image: asia.gcr.io/soe-trial-oota/flask:latest
         ports:
         - containerPort: 80
