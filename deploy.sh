@@ -1,0 +1,6 @@
+#!/bin/bash
+# Exit on any error
+set -e
+envsubst < ./k8s/kustomization-template.yaml > "./k8s/base/kustomization.yaml"
+ 
+kubectl kustomize "./k8s/base" | kubectl apply -f -
